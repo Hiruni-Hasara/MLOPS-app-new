@@ -2,10 +2,10 @@
 
 This project is a machine learning web application that predicts whether a person is at risk of heart disease based on their health data.
 
-Group members-
-W.K.Hiruni Hasara (s 16210)
-Nethmi Sansala (s 16252)
-Chathuni Amasha (s 16242)
+-Group members:
+-W.K.Hiruni Hasara (s 16210)
+-Nethmi Sansala (s 16252)
+-Chathuni Amasha (s 16242)
 
 ---
 
@@ -34,12 +34,16 @@ Then install and open Docker.
 
 Open your terminal or PowerShell inside the project folder, then run:
 
+---
+
 ```bash
 docker build -t heart-app .
 docker run -p 5000:5000 heart-app
-
----
-
+```
 Now open your browser and go to:
+
+```bash
 http://localhost:5000
+```
 You’ll see the prediction form...
+
