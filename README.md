@@ -2,10 +2,12 @@
 
 This project is a machine learning web application that predicts whether a person is at risk of heart disease based on their health data.
 
--Group members:
--W.K.Hiruni Hasara (s 16210)
--Nethmi Sansala (s 16252)
--Chathuni Amasha (s 16242)
+---
+
+## Group members:
+- **W.K.Hiruni Hasara (s 16210)**
+- **Nethmi Sansala (s 16252)**
+- **Chathuni Amasha (s 16242)**
 
 ---
 
