@@ -1,9 +1,18 @@
 from flask import Flask, request, jsonify, send_from_directory
 import joblib
 import os
+import pandas as pd
 
+# Initialize the Flask app and load model
 app = Flask(__name__, static_folder='frontend')
 model = joblib.load("model.pkl")
+
+# Feature names used in training (must match column order)
+feature_names = [
+    'Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol',
+    'FastingBS', 'RestingECG', 'MaxHR', 'ExerciseAngina',
+    'Oldpeak', 'ST_Slope'
+]
 
 @app.route("/")
 def serve_index():
@@ -14,7 +23,12 @@ def predict():
     try:
         input_data = request.get_json()
         features = input_data["features"]
-        prediction = model.predict([features])[0]
+
+        # Convert to DataFrame with proper feature names
+        input_df = pd.DataFrame([features], columns=feature_names)
+
+        # Make prediction
+        prediction = model.predict(input_df)[0]
         return jsonify({"prediction": int(prediction)})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
